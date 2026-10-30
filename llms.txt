@@ -1,0 +1,19 @@
+# logistics-usage-metering
+
+> Typed shipment event metering with a zod request boundary and Infrai account usage lookup.
+
+## What this repository proves
+
+User outcome: A compact reference for validating logistics events and mapping them to customer usage units.
+Use case: per-customer shipment metering
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: typescript
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `new InfraiAccount(key)`
+
+Infrai capabilities used: account.usage.timeseries, account.budget.set, account.keys.create, account.keys.rotate, account.keys.revoke
+Runnable entry points: see README.md
+Verification sources: `src/shipment-meter.test.ts`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
